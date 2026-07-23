@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Solicitud recibida | Navigo Corpore</title>
+  <meta name="description" content="Tu solicitud fue recibida por Navigo Corpore.">
+  <meta name="theme-color" content="#101826">
+  <link rel="icon" href="assets/navigo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="thanks" data-brand="navigo" data-brand-name="Navigo Corpore">
+  <main class="thanks-page">
+    <div class="thanks-shell">
+      <section class="calendar-column" aria-labelledby="calendarTitle">
+        <div class="calendar-header">
+          <p class="eyebrow">Siguiente paso</p>
+          <h2 id="calendarTitle">Agenda tu llamada</h2>
+          <p>Selecciona un horario disponible para conversar con el equipo.</p>
+        </div>
+
+        <!-- PROTOTIPO. Reemplazar srcdoc por la URL real de Calendly cuando esté disponible. -->
+        <iframe
+          class="calendar-frame"
+          title="Agenda una llamada con Navigo Corpore"
+          loading="lazy"
+          sandbox="allow-forms allow-scripts"
+          srcdoc='<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box}body{margin:0;padding:20px;font-family:Arial,sans-serif;color:#101826;background:#fff}small{color:#727b87}h3{margin:5px 0 6px;font-size:22px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.day{padding:10px 4px;border:1px solid #d9dde4;border-radius:10px;text-align:center;font-size:12px}.day b{display:block;margin-top:5px;font-size:17px}.day.active{color:#fff;background:#101826;border-color:#101826}.times{display:grid;gap:8px}button{width:100%;padding:12px;border:1px solid #c8aa72;border-radius:999px;color:#101826;background:#fff;font-weight:700}.note{margin-top:16px;padding:12px;border-radius:10px;background:#f4f1ea;font-size:12px;line-height:1.45}@media(max-width:420px){body{padding:14px}.grid{gap:5px}.day{font-size:10px}}
+</style></head><body><small>Navigo Corpore · Reunión de orientación</small><h3>Selecciona un horario</h3><small>Duración estimada: 30 minutos</small><div class="grid"><div class="day"><span>LUN</span><b>27</b></div><div class="day active"><span>MAR</span><b>28</b></div><div class="day"><span>MIÉ</span><b>29</b></div></div><div class="times"><button type="button">10:00</button><button type="button">12:30</button><button type="button">16:00</button></div><div class="note"><strong>Calendario de demostración.</strong><br>El enlace real de Calendly se integrará antes de publicar.</div></body></html>'>
+        </iframe>
+      </section>
+
+      <section class="thanks-copy">
+        <a class="brand brand-navigo" href="index.html" aria-label="Navigo Corpore, volver al inicio">
+          <img src="assets/navigo-mark.png" alt="" width="46" height="46">
+          <span><strong>NAVIGO</strong><small>CORPORE</small></span>
+        </a>
+
+        <p class="eyebrow">Solicitud recibida</p>
+        <h1>Recibimos tu solicitud. <em>Ahora revisaremos el contexto.</em></h1>
+        <p id="thanksMessage">El equipo de Navigo Corpore revisará la información inicial y te contactará para conocer el contexto y explicarte los siguientes pasos.</p>
+
+        <div class="thanks-summary" id="thanksSummary" aria-live="polite"></div>
+
+        <div class="thanks-next">
+          <strong>Antes de la llamada:</strong>
+          <span>No envíes documentos sensibles sin indicaciones.</span>
+          <span>Ten a la mano fechas y datos básicos.</span>
+          <span>La valoración no garantiza viabilidad ni resultado.</span>
+        </div>
+
+        <div class="thanks-actions">
+          <a class="btn" href="index.html#proceso">Conocer cómo trabajamos</a>
+          <a class="btn btn-ghost" href="index.html">Volver al inicio</a>
+        </div>
+
+        <p class="thanks-legal">La recepción del formulario no crea una relación abogado-cliente ni garantiza un resultado.</p>
+      </section>
+    </div>
+
+    <footer class="thanks-footer">
+      <span>Navigo Corpore</span>
+      <a href="https://dinametra.com/" target="_blank" rel="noopener">Dinametra — dinametra.com</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
