@@ -1501,3 +1501,121 @@ select:invalid {
     animation: none !important;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   AJUSTE HERO — versión Navigo Corpore
+   Mantiene alineación izquierda, reduce renglones y elimina
+   la tarjeta lateral "Del contexto al siguiente paso".
+   ───────────────────────────────────────────────────────────── */
+.hero {
+  align-items: center;
+  padding-top: calc(var(--header-h) + clamp(52px, 7vw, 96px));
+  padding-bottom: clamp(72px, 9vw, 120px);
+}
+
+.hero-grid {
+  display: block;
+  width: 100%;
+  max-width: 1180px;
+}
+
+.hero-copy {
+  width: min(100%, 1060px);
+  max-width: 1060px;
+  text-align: left;
+}
+
+.hero h1 {
+  width: min(100%, 1020px);
+  max-width: 1020px;
+  margin-bottom: 22px;
+  font-size: clamp(2.55rem, 5.2vw, 5.15rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.hero-title-main {
+  display: block;
+}
+
+.hero-title-accent {
+  display: block;
+  margin-top: .28em;
+  color: var(--accent-2);
+  font-family: var(--sans);
+  font-size: .48em;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .015em;
+  text-transform: none;
+}
+
+.hero-lead {
+  width: min(100%, 980px);
+  max-width: 980px;
+  margin-bottom: 30px;
+  font-size: clamp(.98rem, 1.25vw, 1.12rem);
+  line-height: 1.72;
+}
+
+@media (max-width: 1080px) {
+  .hero-grid {
+    display: block;
+  }
+
+  .hero-copy {
+    width: min(100%, 920px);
+  }
+
+  .hero h1 {
+    width: min(100%, 880px);
+    max-width: 880px;
+    font-size: clamp(2.45rem, 7.2vw, 4.65rem);
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding-top: 122px;
+    padding-bottom: 70px;
+  }
+
+  .hero-grid {
+    display: block;
+  }
+
+  .hero h1 {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: clamp(2.35rem, 11.5vw, 3.75rem);
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  .hero-title-accent {
+    margin-top: .34em;
+    font-size: .56em;
+    line-height: 1.15;
+  }
+
+  .hero-lead {
+    width: 100%;
+    max-width: 100%;
+    font-size: .96rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: clamp(2.18rem, 11.2vw, 3.2rem);
+  }
+
+  .hero-title-accent {
+    font-size: .58em;
+  }
+}
+

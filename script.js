@@ -148,17 +148,20 @@
   function initDynamicHero() {
     const term = (new URLSearchParams(window.location.search).get("utm_term") || "").toLowerCase();
     const title = qs("[data-dynamic-title]");
-    const lead = qs("[data-dynamic-lead]");
     const situation = qs("#leadForm-situacion");
-    if (!title || !lead) return;
+    if (!title) return;
+
+    const setTitle = (main) => {
+      title.innerHTML =
+        `<span class="hero-title-main">${main}</span>` +
+        `<strong class="hero-title-accent">Revisemos tu caso.</strong>`;
+    };
 
     if (term.includes("inmobili")) {
-      title.innerHTML = "¿Tienes un problema inmobiliario? <em>Revisemos tu caso.</em>";
-      lead.textContent = "Cuéntanos qué ocurrió. Un abogado revisará la situación, te explicará las opciones que podrían aplicar y te orientará sobre los siguientes pasos.";
+      setTitle("¿Tienes un problema inmobiliario?");
       if (situation) situation.value = "Problema inmobiliario";
     } else if (term.includes("negligencia") || term.includes("medica") || term.includes("médica")) {
-      title.innerHTML = "¿Quieres revisar una atención médica? <em>Hablemos de tu caso.</em>";
-      lead.textContent = "Cuéntanos lo esencial, sin enviar expedientes sensibles. Un abogado revisará el contexto inicial y te explicará cómo puede continuar la valoración.";
+      setTitle("¿Quieres revisar una atención médica?");
       if (situation) situation.value = "Posible negligencia médica";
     }
   }
