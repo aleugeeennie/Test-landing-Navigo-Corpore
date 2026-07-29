@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+<rect width="800" height="1000" fill="#20394c"/>
+<g fill="none" stroke="#6f94a0" stroke-width="2" opacity=".42">
+  <path d="M-90 180 C110 30 280 40 430 160 S660 335 900 160"/>
+  <path d="M-80 230 C120 78 294 86 444 205 S680 372 880 218"/>
+  <path d="M-70 282 C132 128 300 135 458 252 S690 414 870 278"/>
+  <path d="M-70 820 C108 682 265 692 402 792 S645 950 895 794"/>
+  <path d="M-58 866 C120 730 280 742 418 838 S663 980 885 836"/>
+</g>
+<g fill="none" stroke="#e8d9bb" stroke-width="4">
+  <path d="M98 790 C158 626 170 516 290 470 S462 360 442 246 S534 92 696 142"/>
+</g>
+<g fill="#20394c" stroke="#e8d9bb" stroke-width="4">
+  <circle cx="98" cy="790" r="14"/>
+  <circle cx="290" cy="470" r="14"/>
+  <circle cx="442" cy="246" r="14"/>
+  <circle cx="696" cy="142" r="18"/>
+</g>
+<g fill="#ffffff" font-family="Arial, sans-serif" font-size="19" letter-spacing="4">
+  <text x="130" y="828">CONTEXTO</text>
+  <text x="320" y="510">ANÁLISIS</text>
+  <text x="472" y="286">OPCIONES</text>
+  <text x="510" y="110">DECISIÓN</text>
+</g>
+</svg>

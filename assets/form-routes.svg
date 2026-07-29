@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 980">
+<rect width="760" height="980" fill="#20394c"/>
+<g fill="none" stroke="#6f94a0" stroke-width="2" opacity=".55">
+  <path d="M-120 210 C90 60 270 75 420 192 S665 360 880 180"/>
+  <path d="M-105 270 C104 118 282 132 438 248 S682 407 860 245"/>
+  <path d="M-90 332 C115 180 298 194 455 308 S696 452 842 312"/>
+  <path d="M-80 820 C110 682 275 690 420 790 S680 956 870 808"/>
+  <path d="M-68 870 C126 735 286 742 438 842 S697 985 854 858"/>
+</g>
+<g fill="none" stroke="#e8d9bb" stroke-width="4">
+  <path d="M108 850 C180 674 245 625 356 590 S522 470 505 348 S590 146 675 118"/>
+</g>
+<g fill="#20394c" stroke="#e8d9bb" stroke-width="4">
+  <circle cx="108" cy="850" r="13"/>
+  <circle cx="356" cy="590" r="13"/>
+  <circle cx="505" cy="348" r="13"/>
+  <circle cx="675" cy="118" r="18"/>
+</g>
+<g fill="#ffffff" font-family="Arial, sans-serif" font-size="17" letter-spacing="4">
+  <text x="132" y="886">PRIMER CONTACTO</text>
+  <text x="380" y="630">CONTEXTO</text>
+  <text x="527" y="388">REVISIÓN</text>
+  <text x="490" y="92">SIGUIENTE PASO</text>
+</g>
+</svg>

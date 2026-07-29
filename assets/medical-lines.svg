@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+<defs>
+  <linearGradient id="bg" x1=".1" y1=".1" x2=".9" y2="1">
+    <stop offset="0" stop-color="#dce7e8"/>
+    <stop offset="1" stop-color="#f6f1e8"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="600" fill="url(#bg)"/>
+<g fill="none" stroke="#14253a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M324 478 C310 400 318 345 355 309 C394 271 405 229 389 170"/>
+  <path d="M389 170 C454 129 515 148 550 208 C575 251 576 301 554 348 C537 385 510 406 478 416"/>
+  <path d="M476 416 C454 430 446 452 447 482"/>
+  <path d="M382 198 C418 208 449 204 480 183"/>
+  <path d="M442 246 C460 256 482 256 501 246"/>
+</g>
+<g fill="none" stroke="#b9965d" stroke-width="4">
+  <path d="M70 350 H223 L260 294 L316 413 L365 345 H452 L490 272 L548 412 L598 350 H830"/>
+</g>
+<g fill="#fffdf8" stroke="#b9965d" stroke-width="4">
+  <circle cx="70" cy="350" r="10"/>
+  <circle cx="830" cy="350" r="12"/>
+</g>
+<g fill="none" stroke="#8eb0b6" stroke-width="2" opacity=".72">
+  <circle cx="457" cy="306" r="214"/>
+  <circle cx="457" cy="306" r="244"/>
+  <circle cx="457" cy="306" r="274"/>
+</g>
+</svg>

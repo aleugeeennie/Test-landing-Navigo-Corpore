@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 72" role="img" aria-labelledby="title desc">
+  <title id="title">Navigo Corpore</title>
+  <desc id="desc">Logotipo de Navigo Corpore en azul marino y dorado</desc>
+  <g fill="none" stroke-linecap="round">
+    <circle cx="35" cy="36" r="25" stroke="#D2B77F" stroke-width="2"/>
+    <path d="M49 20a20 20 0 1 0 0 32" stroke="#173047" stroke-width="4"/>
+    <path d="M48 28c-9-5-19-2-23 7 4 9 14 12 23 7" stroke="#C59D5F" stroke-width="2.5"/>
+    <circle cx="35" cy="36" r="3.2" fill="#C59D5F" stroke="none"/>
+  </g>
+  <text x="76" y="34" fill="#173047" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="4">NAVIGO</text>
+  <text x="78" y="54" fill="#607080" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="5">CORPORE</text>
+</svg>

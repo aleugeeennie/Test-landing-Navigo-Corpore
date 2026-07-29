@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 980">
+<rect width="760" height="980" fill="#20394c"/>
+<g fill="none" stroke="#6f94a0" stroke-width="2" opacity=".58">
+  <path d="M-100 170 C110 18 282 30 430 150 S665 320 860 150"/>
+  <path d="M-85 230 C120 78 296 90 448 208 S684 365 844 214"/>
+  <path d="M-70 294 C132 140 312 154 465 268 S700 410 828 282"/>
+  <path d="M-65 824 C118 682 284 690 430 795 S684 954 842 812"/>
+</g>
+<g fill="none" stroke="#e8d9bb" stroke-width="4">
+  <path d="M96 820 C186 650 245 610 360 566 S520 442 508 334 S593 162 675 126"/>
+</g>
+<g fill="#20394c" stroke="#e8d9bb" stroke-width="4">
+  <circle cx="96" cy="820" r="13"/>
+  <circle cx="360" cy="566" r="13"/>
+  <circle cx="508" cy="334" r="13"/>
+  <circle cx="675" cy="126" r="20"/>
+</g>
+<g fill="#fffdf8" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">
+  <text x="120" y="858">SOLICITUD</text>
+  <text x="385" y="606">REVISIÓN</text>
+  <text x="535" y="374">CONTACTO</text>
+  <text x="494" y="96">RUTA INICIADA</text>
+</g>
+</svg>

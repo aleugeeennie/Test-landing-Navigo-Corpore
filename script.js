@@ -20,7 +20,6 @@
     }
 
     track("cta_click", { location, situation });
-
     if (!formSection) return;
 
     formSection.scrollIntoView({
@@ -28,9 +27,7 @@
       block: "start"
     });
 
-    window.setTimeout(() => {
-      nameField?.focus({ preventScroll: true });
-    }, 650);
+    window.setTimeout(() => nameField?.focus({ preventScroll: true }), 650);
   }
 
   function initHeader() {
@@ -77,10 +74,7 @@
 
     qsa(".js-select-case").forEach((card) => {
       card.addEventListener("click", () => {
-        scrollToForm(
-          card.dataset.situation || "",
-          card.dataset.location || "service-card"
-        );
+        scrollToForm(card.dataset.situation || "", card.dataset.location || "service-card");
       });
     });
   }
@@ -111,37 +105,18 @@
       if (!button) return;
 
       button.addEventListener("click", () => {
-        const shouldOpen = !item.classList.contains("is-open");
+        const open = !item.classList.contains("is-open");
 
         qsa(".faq-item").forEach((other) => {
           other.classList.remove("is-open");
           qs("button", other)?.setAttribute("aria-expanded", "false");
         });
 
-        if (shouldOpen) {
+        if (open) {
           item.classList.add("is-open");
           button.setAttribute("aria-expanded", "true");
         }
       });
-    });
-  }
-
-  function initRail() {
-    qsa("[data-rail]").forEach((wrapper) => {
-      const rail = qs(".proof-rail", wrapper);
-      const prev = qs("[data-rail-prev]", wrapper);
-      const next = qs("[data-rail-next]", wrapper);
-      if (!rail || !prev || !next) return;
-
-      const move = (direction) => {
-        rail.scrollBy({
-          left: direction * rail.clientWidth * .78,
-          behavior: "smooth"
-        });
-      };
-
-      prev.addEventListener("click", () => move(-1));
-      next.addEventListener("click", () => move(1));
     });
   }
 
@@ -151,17 +126,17 @@
     const situation = qs("#leadForm-situacion");
     if (!title) return;
 
-    const setTitle = (main) => {
+    const setTitle = (main, accent) => {
       title.innerHTML =
         `<span class="hero-title-main">${main}</span>` +
-        `<strong class="hero-title-accent">Revisemos tu caso.</strong>`;
+        `<strong class="hero-title-accent">${accent}</strong>`;
     };
 
     if (term.includes("inmobili")) {
-      setTitle("¿Tienes un problema inmobiliario?");
+      setTitle("Tu patrimonio necesita claridad.", "Tracemos la ruta.");
       if (situation) situation.value = "Problema inmobiliario";
     } else if (term.includes("negligencia") || term.includes("medica") || term.includes("médica")) {
-      setTitle("¿Quieres revisar una atención médica?");
+      setTitle("Tu salud merece respuestas.", "Revisemos lo ocurrido.");
       if (situation) situation.value = "Posible negligencia médica";
     }
   }
@@ -191,7 +166,6 @@
             ? "Completa este campo."
             : "Revisa la información.";
       }
-
       return valid;
     };
 
@@ -254,95 +228,6 @@
     });
   }
 
-  function initScrollTracking() {
-    const milestones = new Set();
-
-    const handler = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (max <= 0) return;
-
-      const percentage = Math.round((window.scrollY / max) * 100);
-      [50, 90].forEach((milestone) => {
-        if (percentage >= milestone && !milestones.has(milestone)) {
-          milestones.add(milestone);
-          track(`scroll_${milestone}`, { brand: "Navigo Corpore" });
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handler, { passive: true });
-  }
-
-  function initParticles() {
-    const canvas = qs("#siteParticles");
-    if (!canvas) return;
-
-    const context = canvas.getContext("2d", { alpha: true });
-    if (!context) return;
-
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let width = 0;
-    let height = 0;
-    let dpr = 1;
-    let particles = [];
-    let frame = 0;
-
-    const resize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = Math.round(width * dpr);
-      canvas.height = Math.round(height * dpr);
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      context.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      const count = Math.max(24, Math.min(62, Math.round((width * height) / 28000)));
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: .5 + Math.random() * 1.3,
-        vx: (Math.random() - .5) * .08,
-        vy: -.05 - Math.random() * .1,
-        alpha: .10 + Math.random() * .22
-      }));
-    };
-
-    const draw = () => {
-      context.clearRect(0, 0, width, height);
-
-      particles.forEach((particle) => {
-        context.beginPath();
-        context.fillStyle = `rgba(200, 170, 114, ${particle.alpha})`;
-        context.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
-        context.fill();
-
-        if (!reduced) {
-          particle.x += particle.vx;
-          particle.y += particle.vy;
-
-          if (particle.y < -4) {
-            particle.y = height + 4;
-            particle.x = Math.random() * width;
-          }
-          if (particle.x < -4) particle.x = width + 4;
-          if (particle.x > width + 4) particle.x = -4;
-        }
-      });
-
-      if (!reduced) frame = requestAnimationFrame(draw);
-    };
-
-    resize();
-    draw();
-
-    window.addEventListener("resize", () => {
-      cancelAnimationFrame(frame);
-      resize();
-      draw();
-    }, { passive: true });
-  }
-
   function initThanks() {
     if (document.body.dataset.page !== "thanks") return;
 
@@ -372,6 +257,65 @@
     }
   }
 
+  function initScrollTracking() {
+    const milestones = new Set();
+
+    const handler = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+
+      const percentage = Math.round((window.scrollY / max) * 100);
+      [50, 90].forEach((milestone) => {
+        if (percentage >= milestone && !milestones.has(milestone)) {
+          milestones.add(milestone);
+          track(`scroll_${milestone}`, { brand: "Navigo Corpore" });
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handler, { passive: true });
+  }
+
+
+  function initTimeline() {
+    const map = qs(".process-map");
+    if (!map) return;
+
+    if (!("IntersectionObserver" in window)) {
+      map.classList.add("is-running");
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        map.classList.add("is-running");
+        observer.unobserve(map);
+      });
+    }, { threshold: .28 });
+
+    observer.observe(map);
+  }
+
+  function initHeroParallax() {
+    const visual = qs(".hero-visual");
+    if (!visual) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (pointer: coarse)").matches) return;
+
+    visual.addEventListener("pointermove", (event) => {
+      const rect = visual.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - .5) * 16;
+      const y = ((event.clientY - rect.top) / rect.height - .5) * 16;
+      visual.style.setProperty("--hero-x", `${x}px`);
+      visual.style.setProperty("--hero-y", `${y}px`);
+    });
+
+    visual.addEventListener("pointerleave", () => {
+      visual.style.setProperty("--hero-x", "0px");
+      visual.style.setProperty("--hero-y", "0px");
+    });
+  }
+
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, (char) => ({
       "&": "&amp;",
@@ -387,12 +331,11 @@
     initCtas();
     initReveal();
     initFaq();
-    initRail();
     initDynamicHero();
     initForm();
-    initScrollTracking();
-    initParticles();
     initThanks();
-    track("view_hero", { brand: "Navigo Corpore" });
+    initTimeline();
+    initHeroParallax();
+    initScrollTracking();
   });
 })();
