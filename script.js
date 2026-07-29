@@ -123,7 +123,6 @@
   function initDynamicHero() {
     const term = (new URLSearchParams(window.location.search).get("utm_term") || "").toLowerCase();
     const title = qs("[data-dynamic-title]");
-    const situation = qs("#leadForm-situacion");
     if (!title) return;
 
     const setTitle = (main, accent) => {
@@ -131,13 +130,8 @@
         `<span class="hero-title-main">${main}</span>` +
         `<strong class="hero-title-accent">${accent}</strong>`;
     };
-
     if (term.includes("inmobili")) {
       setTitle("Tu patrimonio necesita claridad.", "Tracemos la ruta.");
-      if (situation) situation.value = "Problema inmobiliario";
-    } else if (term.includes("negligencia") || term.includes("medica") || term.includes("médica")) {
-      setTitle("Tu salud merece respuestas.", "Revisemos lo ocurrido.");
-      if (situation) situation.value = "Posible negligencia médica";
     }
   }
 
